@@ -18,10 +18,12 @@ for(var element of input) {
     if(regex1.exec(element2)) match1.push(element2);
     if(regex2.exec(element2)) match2.push(element2);
   }
-  map[element] = {1: match1, 2: match2};
+  map[element] = {match1: match1, match2: match2};
 }
 for(var element of map) {
-  
+  if(element.match1.length == 0 && element.match2.length == 0) {
+    console.log(element);
+  }
 }
 
 var ans = JSON.stringify(map);
